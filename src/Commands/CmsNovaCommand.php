@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton\Commands;
+namespace Lemaur\CmsNova\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class CmsNovaCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'laravel_cms_nova';
 
     public $description = 'My command';
 

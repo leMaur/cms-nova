@@ -1,6 +1,6 @@
 <?php
 
-namespace VendorName\Skeleton\Tests;
+namespace Lemaur\CmsNova\Tests;
 
 class ExampleTest extends TestCase
 {

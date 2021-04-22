@@ -1,17 +1,17 @@
 {
-    "name": "vendor_slug/package_slug",
-    "description": ":package_description",
+    "name": "lemaur/laravel_cms_nova",
+    "description": "laravel-cms-nova",
     "keywords": [
-        ":vendor_name",
+        "lemaur",
         "laravel",
-        "package_slug"
+        "laravel_cms_nova"
     ],
-    "homepage": "https://github.com/vendor_slug/package_slug",
+    "homepage": "https://github.com/lemaur/laravel_cms_nova",
     "license": "MIT",
     "authors": [
         {
-            "name": ":author_name",
-            "email": "author@domain.com",
+            "name": "Maurizio",
+            "email": "hello@lemaur.me",
             "role": "Developer"
         }
     ],
@@ -30,13 +30,13 @@
     },
     "autoload": {
         "psr-4": {
-            "VendorName\\Skeleton\\": "src",
-            "VendorName\\Skeleton\\Database\\Factories\\": "database/factories"
+            "Lemaur\\CmsNova\\": "src",
+            "Lemaur\\CmsNova\\Database\\Factories\\": "database/factories"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "VendorName\\Skeleton\\Tests\\": "tests"
+            "Lemaur\\CmsNova\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -50,10 +50,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "VendorName\\Skeleton\\SkeletonServiceProvider"
+                "Lemaur\\CmsNova\\CmsNovaServiceProvider"
             ],
             "aliases": {
-                "Skeleton": "VendorName\\Skeleton\\SkeletonFacade"
+                "CmsNova": "Lemaur\\CmsNova\\CmsNovaFacade"
             }
         }
     },
