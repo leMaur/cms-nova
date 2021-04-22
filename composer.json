@@ -1,12 +1,12 @@
 {
-    "name": "lemaur/laravel_cms_nova",
+    "name": "lemaur/laravel-cms-nova",
     "description": "laravel-cms-nova",
     "keywords": [
         "lemaur",
         "laravel",
-        "laravel_cms_nova"
+        "laravel-cms-nova"
     ],
-    "homepage": "https://github.com/lemaur/laravel_cms_nova",
+    "homepage": "https://github.com/lemaur/laravel-cms-nova",
     "license": "MIT",
     "authors": [
         {
