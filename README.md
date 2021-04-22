@@ -16,7 +16,7 @@ composer require lemaur/laravel-cms-nova
 You can publish and run the migrations with:
 
 ```bash
-php artisan vendor:publish --provider="Lemaur\CmsNova\CmsNovaServiceProvider" --tag="laravel-cms-nova-migrations"
+php artisan nova:install
 php artisan migrate
 ```
 
@@ -25,19 +25,16 @@ You can publish the config file with:
 php artisan vendor:publish --provider="Lemaur\CmsNova\CmsNovaServiceProvider" --tag="laravel-cms-nova-config"
 ```
 
-This is the contents of the published config file:
-
-```php
-return [
-];
+Add this snippet to your `composer.json`:
+```bash
+"scripts": {
+    "post-update-cmd": [
+        "@php artisan nova:publish"
+    ]
+}
 ```
 
 ## Usage
-
-```php
-$laravel-cms-nova = new Lemaur\CmsNova();
-echo $laravel-cms-nova->echoPhrase('Hello, Spatie!');
-```
 
 ## Testing
 

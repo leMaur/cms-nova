@@ -17,8 +17,12 @@
     ],
     "require": {
         "php": "^8.0",
+        "ebess/advanced-nova-media-library": "^3.6",
+        "illuminate/contracts": "^8.0",
+        "laravel/nova": "~3.0",
+        "optimistdigital/nova-sortable": "^2.2",
         "spatie/laravel-package-tools": "^1.4.3",
-        "illuminate/contracts": "^8.0"
+        "spatie/nova-tags-field": "^3.1"
     },
     "require-dev": {
         "brianium/paratest": "^6.2",
@@ -51,12 +55,15 @@
         "laravel": {
             "providers": [
                 "Lemaur\\CmsNova\\CmsNovaServiceProvider"
-            ],
-            "aliases": {
-                "CmsNova": "Lemaur\\CmsNova\\CmsNovaFacade"
-            }
+            ]
         }
     },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://nova.laravel.com"
+        }
+    ],
     "minimum-stability": "dev",
     "prefer-stable": true
 }
