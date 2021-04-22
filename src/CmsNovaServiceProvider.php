@@ -2,9 +2,9 @@
 
 namespace Lemaur\CmsNova;
 
+use Lemaur\CmsNova\Commands\CmsNovaCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use Lemaur\CmsNova\Commands\CmsNovaCommand;
 
 class CmsNovaServiceProvider extends PackageServiceProvider
 {
