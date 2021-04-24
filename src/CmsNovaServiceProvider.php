@@ -11,7 +11,6 @@ class CmsNovaServiceProvider extends PackageServiceProvider
 {
     public function configurePackage(Package $package): void
     {
-        $package
-            ->name('laravel-cms-nova');
+        $package->name('cms-nova');
     }
 }

@@ -1,12 +1,12 @@
 {
-    "name": "lemaur/laravel-cms-nova",
-    "description": "laravel-cms-nova",
+    "name": "lemaur/cms-nova",
+    "description": "cms-nova",
     "keywords": [
         "lemaur",
         "laravel",
-        "laravel-cms-nova"
+        "cms-nova"
     ],
-    "homepage": "https://github.com/lemaur/laravel-cms-nova",
+    "homepage": "https://github.com/lemaur/cms-nova",
     "license": "MIT",
     "authors": [
         {
@@ -34,13 +34,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Lemaur\\CmsNova\\": "src",
-            "Lemaur\\CmsNova\\Database\\Factories\\": "database/factories"
+            "Lemaur\\CmsNova\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Lemaur\\CmsNova\\Tests\\": "tests"
+            "Tests\\": "tests"
         }
     },
     "scripts": {
