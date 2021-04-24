@@ -1,6 +1,6 @@
 <?php
 
-namespace Lemaur\CmsNova\Tests;
+namespace Tests;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Lemaur\CmsNova\CmsNovaServiceProvider;

@@ -2,8 +2,6 @@
 
 namespace Tests;
 
-use Lemaur\CmsNova\Tests\TestCase;
-
 class ExampleTest extends TestCase
 {
     /** @test */
