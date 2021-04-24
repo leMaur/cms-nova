@@ -1,0 +1,24 @@
+<?php
+
+namespace App\Nova\Concerns;
+
+use App\Nova\Resource;
+use Laravel\Nova\Fields\Text;
+
+class StatusForIndex
+{
+    public static function make(Resource $resource): Text
+    {
+        return Text::make('Status', function () use ($resource) {
+                if ($resource->isPublished()) {
+                    return __('published');
+                }
+
+                if ($resource->isPlanned()) {
+                    return __('planned');
+                }
+
+                return __('draft');
+            });
+    }
+}

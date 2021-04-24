@@ -1,0 +1,27 @@
+<?php
+
+namespace App\Nova\Concerns;
+
+use App\Nova\Resource;
+use Laravel\Nova\Fields\Text;
+use Laravel\Nova\Fields\Textarea;
+
+class MetaFields
+{
+    public static function make(Resource $resource): array
+    {
+        return [
+            Text::make('Title', 'meta_title')
+                //->stacked()
+                ->rules(['max:'.config('cms.seo.title.limit')])
+                ->help('Max '.config('cms.seo.title.limit').' characters.')
+                ->hideFromIndex(),
+
+            Textarea::make('Description', 'meta_description')
+                //->stacked()
+                ->rules(['max:'.config('cms.seo.meta_description_limit')])
+                ->help('Max '.config('cms.seo.meta_description_limit').' characters.')
+                ->hideFromIndex(),
+        ];
+    }
+}

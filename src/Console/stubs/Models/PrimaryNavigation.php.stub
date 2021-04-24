@@ -1,0 +1,22 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Builder;
+use Lemaur\Cms\Models\Navigation as CmsNavigation;
+
+class PrimaryNavigation extends CmsNavigation
+{
+    protected static function booted(): void
+    {
+        parent::booted();
+
+        static::addGlobalScope(CmsNavigation::PRIMARY, function (Builder $builder): void {
+            $builder->withType(CmsNavigation::PRIMARY);
+        });
+
+        static::saving(function ($model) {
+            $model->type = CmsNavigation::PRIMARY;
+        });
+    }
+}

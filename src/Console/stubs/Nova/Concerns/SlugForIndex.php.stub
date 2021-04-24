@@ -1,0 +1,27 @@
+<?php
+
+namespace App\Nova\Concerns;
+
+use App\Nova\Resource;
+use Laravel\Nova\Fields\Text;
+use Lemaur\Cms\Models\ReservedSlug;
+
+class SlugForIndex
+{
+    public static function make(Resource $resource, string $name): Text
+    {
+        return Text::make($name, function () use ($resource) {
+            $classLink = 'no-underline font-bold dim text-primary text-sm';
+            $classSpan = 'text-primary-50%';
+            $url = (string) config('app.url');
+            $parent = trim($resource->parent, '/');
+            $slug = trim(ReservedSlug::toSlug($resource->slug), '/');
+            $href = collect([$url, $parent, $slug])->filter()->implode('/');
+            $url = collect([$url, $parent])->filter()->implode('/');
+
+            return vsprintf('<a class="%s" href="%s" target="_blank"><span class="%s">%s/</span>%s</a>', [
+                $classLink, $href, $classSpan, $url, $slug,
+            ]);
+        })->asHtml();
+    }
+}

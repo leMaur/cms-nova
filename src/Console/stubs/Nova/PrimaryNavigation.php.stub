@@ -1,0 +1,53 @@
+<?php
+
+namespace App\Nova;
+
+use App\Models\PrimaryNavigation as Model;
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Http\Request;
+use Laravel\Nova\Fields\BelongsTo;
+use Laravel\Nova\Http\Requests\NovaRequest;
+use OptimistDigital\NovaSortable\Traits\HasSortableRows;
+
+class PrimaryNavigation extends Resource
+{
+    use HasSortableRows;
+
+    public static $model = Model::class;
+
+    public static $group = 'Navigation';
+
+    public static $title = 'id';
+
+    public static $search = [
+        'id',
+    ];
+
+    public static function label(): string
+    {
+        return 'Primary';
+    }
+
+    public function fields(Request $request): array
+    {
+        return [
+            BelongsTo::make('Page'),
+        ];
+    }
+
+    public function fieldsForIndex(): array
+    {
+        return [
+            BelongsTo::make('Page')
+                ->default(fn () => $this->name),
+        ];
+    }
+
+    public static function indexQuery(NovaRequest $request, $query): Builder
+    {
+        return $query
+            ->whereType(Model::PRIMARY)
+            ->reorder()
+            ->ordered();
+    }
+}

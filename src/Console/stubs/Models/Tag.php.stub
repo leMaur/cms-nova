@@ -1,0 +1,10 @@
+<?php
+
+namespace App\Models;
+
+use Lemaur\Cms\Models\Tag as CmsTag;
+
+class Tag extends CmsTag
+{
+    public const TYPE = 'tag';
+}

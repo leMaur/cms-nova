@@ -1,0 +1,31 @@
+<?php
+
+namespace App\Nova;
+
+use App\Models\Tag as Model;
+use Illuminate\Http\Request;
+use Laravel\Nova\Fields\Text;
+use OptimistDigital\NovaSortable\Traits\HasSortableRows;
+
+class Tag extends Resource
+{
+    use HasSortableRows;
+
+    public static $model = Model::class;
+
+    public static $group = 'Settings';
+
+    public static $title = 'name';
+
+    public static $search = [
+        'id', 'name',
+    ];
+
+    public function fields(Request $request): array
+    {
+        return [
+            Text::make('Name')
+                ->rules('required', 'max:50'),
+        ];
+    }
+}

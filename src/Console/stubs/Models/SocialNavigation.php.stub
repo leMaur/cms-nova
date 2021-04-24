@@ -1,0 +1,22 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Builder;
+use Lemaur\Cms\Models\Navigation as CmsNavigation;
+
+class SocialNavigation extends CmsNavigation
+{
+    protected static function booted(): void
+    {
+        parent::booted();
+
+        static::addGlobalScope(CmsNavigation::SOCIAL, function (Builder $builder): void {
+            $builder->withType(CmsNavigation::SOCIAL);
+        });
+
+        static::saving(function ($model) {
+            $model->type = CmsNavigation::SOCIAL;
+        });
+    }
+}

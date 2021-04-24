@@ -1,0 +1,14 @@
+<?php
+
+namespace App\Nova\Concerns;
+
+use App\Nova\Resource;
+use Laravel\Nova\Fields\DateTime;
+
+class DateTimeForIndex
+{
+    public static function make(Resource $resource, string $name, string $field = null): DateTime
+    {
+        return DateTime::make($name, $field)->format('MMMM Do, YYYY');
+    }
+}
