@@ -38,6 +38,9 @@ jobs:
           echo "::add-matcher::${{ runner.tool_cache }}/php.json"
           echo "::add-matcher::${{ runner.tool_cache }}/phpunit.json"
 
+      - name: Authenticate Nova
+        run: composer config http-basic.nova.laravel.com ${{ secrets.NOVA_USER }} ${{ secrets.NOVA_PASS }}
+
       - name: Install dependencies
         run: |
           composer require "laravel/framework:${{ matrix.laravel }}" "orchestra/testbench:${{ matrix.testbench }}" --no-interaction --no-update

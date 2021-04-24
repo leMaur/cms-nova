@@ -26,6 +26,9 @@ jobs:
           path: vendor
           key: composer-${{ hashFiles('composer.lock') }}
 
+      - name: Authenticate Nova
+        run: composer config http-basic.nova.laravel.com ${{ secrets.NOVA_USER }} ${{ secrets.NOVA_PASS }}
+
       - name: Run composer install
         run: composer install -n --prefer-dist
 
