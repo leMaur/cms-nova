@@ -1,4 +1,4 @@
-# laravel-cms-nova
+# Laravel Cms for Nova
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/lemaur/laravel-cms-nova.svg?style=flat-square)](https://packagist.org/packages/lemaur/laravel-cms-nova)
 [![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/lemaur/laravel-cms-nova/run-tests?label=tests)](https://github.com/lemaur/laravel-cms-nova/actions?query=workflow%3Arun-tests+branch%3Amaster)
@@ -10,7 +10,7 @@
 You can install the package via composer:
 
 ```bash
-composer require lemaur/laravel-cms-nova
+composer require lemaur/cms-nova
 ```
 
 You can publish and run the migrations with:
@@ -22,7 +22,7 @@ php artisan migrate
 
 You can publish the config file with:
 ```bash
-php artisan vendor:publish --provider="Lemaur\CmsNova\CmsNovaServiceProvider" --tag="laravel-cms-nova-config"
+php artisan vendor:publish --provider="Lemaur\CmsNova\CmsNovaServiceProvider" --tag="cms-nova-config"
 ```
 
 Add this snippet to your `composer.json`:
