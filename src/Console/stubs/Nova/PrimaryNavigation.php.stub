@@ -3,6 +3,7 @@
 namespace App\Nova;
 
 use App\Models\PrimaryNavigation as Model;
+use Ebess\AdvancedNovaMediaLibrary\Fields\Images;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsTo;
@@ -32,12 +33,16 @@ class PrimaryNavigation extends Resource
     {
         return [
             BelongsTo::make('Page'),
+
+            Images::make('Icon', 'primarynavigation.image.single'),
         ];
     }
 
     public function fieldsForIndex(): array
     {
         return [
+            Images::make('Icon', 'primarynavigation.image.single'),
+
             BelongsTo::make('Page')
                 ->default(fn () => $this->name),
         ];
