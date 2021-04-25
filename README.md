@@ -53,7 +53,7 @@ This authorization gate controls access to Nova in **non-local** environments.
 By default, any user can access the Nova dashboard when the current application environment is `local`. 
 You are free to modify this gate as needed to restrict access to your Nova installation:
 
-```bash
+```php
 /**
  * Register the Nova gate.
  *
