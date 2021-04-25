@@ -30,6 +30,7 @@ class PublishCommand extends Command
             __DIR__.'/../Console/stubs/Nova/PrimaryNavigation.php.stub' => app_path('Nova/PrimaryNavigation.php'),
             __DIR__.'/../Console/stubs/Nova/SecondaryNavigation.php.stub' => app_path('Nova/SecondaryNavigation.php'),
 
+            __DIR__.'/../Console/stubs/Nova/Concerns/LinkField.php.stub' => app_path('Nova/Concerns/LinkField.php'),
             __DIR__.'/../Console/stubs/Nova/Concerns/MetaFields.php.stub' => app_path('Nova/Concerns/MetaFields.php'),
             __DIR__.'/../Console/stubs/Nova/Concerns/SlugForIndex.php.stub' => app_path('Nova/Concerns/SlugForIndex.php'),
             __DIR__.'/../Console/stubs/Nova/Concerns/StatusForIndex.php.stub' => app_path('Nova/Concerns/StatusForIndex.php'),
