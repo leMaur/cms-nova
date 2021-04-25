@@ -7,13 +7,7 @@
 
 ## Installation
 
-You can install the package via composer:
-
-```bash
-composer require lemaur/cms-nova
-```
-
-Add those snippets to your `composer.json`:
+Add those snippets to your `composer.json` before installing the package:
 ```bash
 "repositories": [
     {
@@ -27,6 +21,12 @@ Add those snippets to your `composer.json`:
         "@php artisan nova:publish"
     ]
 }
+```
+
+You can install the package via composer:
+
+```bash
+composer require lemaur/cms-nova
 ```
 
 You can publish and run the migrations with:
