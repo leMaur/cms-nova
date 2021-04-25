@@ -18,7 +18,8 @@ Add those snippets to your `composer.json` before installing the package:
 ...
 "scripts": {
     "post-update-cmd": [
-        "@php artisan nova:publish"
+        "@php artisan nova:publish",
+        "@php artisan view:clear"
     ]
 }
 ```
