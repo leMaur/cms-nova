@@ -13,20 +13,15 @@ You can install the package via composer:
 composer require lemaur/cms-nova
 ```
 
-You can publish and run the migrations with:
-
+Add those snippets to your `composer.json`:
 ```bash
-php artisan nova:install
-php artisan migrate
-```
-
-You can publish the config file with:
-```bash
-php artisan vendor:publish --provider="Lemaur\CmsNova\CmsNovaServiceProvider" --tag="cms-nova-config"
-```
-
-Add this snippet to your `composer.json`:
-```bash
+"repositories": [
+    {
+        "type": "composer",
+        "url": "https://nova.laravel.com"
+    }
+],
+...
 "scripts": {
     "post-update-cmd": [
         "@php artisan nova:publish"
@@ -34,12 +29,11 @@ Add this snippet to your `composer.json`:
 }
 ```
 
-## Usage
-
-## Testing
+You can publish and run the migrations with:
 
 ```bash
-composer test
+php artisan nova:install
+php artisan migrate
 ```
 
 ## Changelog
