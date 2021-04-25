@@ -15,7 +15,9 @@ Add those snippets to your `composer.json` before installing the package:
         "url": "https://nova.laravel.com"
     }
 ],
+
 ...
+
 "scripts": {
     "post-update-cmd": [
         "@php artisan nova:publish",
