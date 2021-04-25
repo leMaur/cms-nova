@@ -40,7 +40,6 @@ You can publish and run the migrations with:
 
 ```bash
 php artisan cms-nova:install
-php artisan migrate
 ```
 
 ## Changelog
