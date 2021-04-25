@@ -28,7 +28,7 @@ Add those snippets to your `composer.json` before installing the package:
 
 You can install the package via composer:
 
-You will be prompted to provide your login credentials for the Nova website. 
+> You will be prompted to provide your login credentials for the Nova website. 
 These credentials will authenticate your Composer session as having permission to download the Nova source code. 
 To avoid manually typing these credentials, you may create a [Composer auth.json file](https://getcomposer.org/doc/articles/authentication-for-private-packages.md#authentication-in-auth-json-per-project) while optionally using your API token in place of your password.
 
