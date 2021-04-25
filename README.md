@@ -42,6 +42,35 @@ You can launch the installation:
 php artisan cms-nova:install
 ```
 
+You can create a new user to access to Nova:
+
+```bash
+php artisan nova:user
+```
+
+Within your `app/Providers/NovaServiceProvider.php` file, there is a `gate` method. 
+This authorization gate controls access to Nova in **non-local** environments. 
+By default, any user can access the Nova dashboard when the current application environment is `local`. 
+You are free to modify this gate as needed to restrict access to your Nova installation:
+
+```bash
+/**
+ * Register the Nova gate.
+ *
+ * This gate determines who can access Nova in non-local environments.
+ *
+ * @return void
+ */
+protected function gate()
+{
+    Gate::define('viewNova', function ($user) {
+        return in_array($user->email, [
+            'taylor@laravel.com',
+        ]);
+    });
+}
+```
+
 ## Changelog
 
 Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
