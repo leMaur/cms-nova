@@ -36,7 +36,7 @@ To avoid manually typing these credentials, you may create a [Composer auth.json
 composer require lemaur/cms-nova
 ```
 
-You can publish and run the migrations with:
+You can launch the installation:
 
 ```bash
 php artisan cms-nova:install
