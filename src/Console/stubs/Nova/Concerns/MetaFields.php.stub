@@ -2,7 +2,10 @@
 
 namespace App\Nova\Concerns;
 
+use App\Models\Page;
 use App\Nova\Resource;
+use Laravel\Nova\Fields\Number;
+use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Textarea;
 
@@ -22,6 +25,17 @@ class MetaFields
                 ->rules(['max:'.config('cms.seo.meta_description_limit')])
                 ->help('Max '.config('cms.seo.meta_description_limit').' characters.')
                 ->hideFromIndex(),
+
+            Number::make('Sitemap Priority')
+                ->help('The priority of this page relative to other on your site.')
+                ->min(0)
+                ->max(1)
+                ->step(0.1),
+
+            Select::make('Sitemap Frequency')
+                ->help('How frequently the page is likely to change.')
+                ->options(Page::$availableFrequencies)
+                ->displayUsingLabels(),
         ];
     }
 }

@@ -3,9 +3,13 @@
 namespace App\Nova;
 
 use App\Models\SocialNavigation as Model;
+use App\Nova\Concerns\LinkField;
+use Ebess\AdvancedNovaMediaLibrary\Fields\Images;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
-use Laravel\Nova\Fields\BelongsTo;
+use Illuminate\Support\Str;
+use Laravel\Nova\Fields\Stack;
+use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
 use OptimistDigital\NovaSortable\Traits\HasSortableRows;
 
@@ -17,10 +21,10 @@ class SocialNavigation extends Resource
 
     public static $group = 'Navigation';
 
-    public static $title = 'id';
+    public static $title = 'name';
 
     public static $search = [
-        'id',
+        'id', 'name', 'url',
     ];
 
     public static function label(): string
@@ -31,15 +35,23 @@ class SocialNavigation extends Resource
     public function fields(Request $request): array
     {
         return [
-            BelongsTo::make('Page'),
+            Text::make('Name')->required(),
+
+            Text::make('Url')->rules(['required', 'url']),
+
+            Images::make('Icon', 'socialnavigation.image.single'),
         ];
     }
 
     public function fieldsForIndex(): array
     {
         return [
-            BelongsTo::make('Page')
-                ->default(fn () => $this->name),
+            Images::make('Icon', 'socialnavigation.image.single'),
+
+            Stack::make('Name', [
+                Text::make('Name'),
+                LinkField::make($this, 'Url', sprintf('https://%s.%s', $this->slug, config('app.domain'))),
+            ]),
         ];
     }
 
