@@ -15,8 +15,8 @@ class SlugForIndex
         $slug = trim(ReservedSlug::toSlug($resource->slug), '/');
         $href = collect([$url, $parent, $slug])->filter()->implode('/');
         $url = collect([$url, $parent])->filter()->implode('/');
-        $value = sprintf('<span class="text-primary-50%">%s</span>%s', $url, $slug);
+        $value = sprintf('<span class="%s">%s/</span>%s', 'text-primary-50%', $url, $slug);
 
-        LinkField::make($resource, $name, $href, $value);
+        return LinkField::make($resource, $name, $href, $value);
     }
 }

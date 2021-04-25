@@ -7,20 +7,18 @@ use Laravel\Nova\Fields\Text;
 
 class LinkField
 {
-    public static function make(Resource $resource, string $name, string $url, ?string $value = null): array
+    public static function make(Resource $resource, string $name, string $url, ?string $value = null): Text
     {
-        return [
-            Text::make($name, function () use ($url, $value) {
-                $classLink = 'no-underline font-bold dim text-primary text-sm';
+        return Text::make($name, function () use ($url, $value) {
+            $classLink = 'no-underline font-bold dim text-primary text-sm';
 
-                if (is_null($value)) {
-                    $value = $url;
-                }
+            if (is_null($value)) {
+                $value = $url;
+            }
 
-                return vsprintf('<a class="%s" href="%s" target="_blank">%s</a>', [
-                    $classLink, $url, $value,
-                ]);
-            })->asHtml(),
-        ];
+            return vsprintf('<a class="%s" href="%s" target="_blank">%s</a>', [
+                $classLink, $url, $value,
+            ]);
+        })->asHtml();
     }
 }
