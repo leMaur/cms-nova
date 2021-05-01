@@ -2,8 +2,8 @@
 
 namespace App\Models;
 
+use Lemaur\Cms\Models\Concerns\HasGlobalScopeType;
 use Lemaur\Cms\Models\Tag as CmsTag;
-use Lemaur\Cms\Traits\HasGlobalScopeType;
 
 class Tag extends CmsTag
 {

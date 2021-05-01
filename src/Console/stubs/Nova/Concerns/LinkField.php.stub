@@ -1,26 +1,31 @@
 <?php
 
-declare(strict_types=1);
-
 namespace App\Nova\Concerns;
 
 use App\Nova\Resource;
+use Closure;
 use Laravel\Nova\Fields\Text;
 
 class LinkField
 {
-    public static function make(Resource $resource, string $name, string $url, ?string $value = null): Text
+    public static function make(Resource $resource, string $name, string $url, string | callable | null $content = null, bool $external = false): Text
     {
-        return Text::make($name, function () use ($url, $value) {
-            $classLink = 'no-underline font-bold dim text-primary text-sm';
-
-            if (is_null($value)) {
-                $value = $url;
+        return Text::make($name, function () use ($url, $content, $external): string {
+            if ($content instanceof Closure || is_callable($content)) {
+                $content = $content();
             }
 
-            return vsprintf('<a class="%s" href="%s" target="_blank">%s</a>', [
-                $classLink, $url, $value,
-            ]);
+            if (is_null($content)) {
+                $content = $url;
+            }
+
+            $external = $external ? 'target="_blank"' : '';
+
+            return <<<BLADE
+                <a href="$url" class="no-underline dim text-primary font-bold" $external>
+                    $content
+                </a>
+                BLADE;
         })->asHtml();
     }
 }

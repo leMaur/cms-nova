@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
 namespace App\Nova\Concerns;
 
 use App\Models\Page;
@@ -17,13 +15,11 @@ class MetaFields
     {
         return [
             Text::make('Title', 'meta_title')
-                //->stacked()
                 ->rules(['max:'.config('cms.seo.title.limit')])
                 ->help('Max '.config('cms.seo.title.limit').' characters.')
                 ->hideFromIndex(),
 
             Textarea::make('Description', 'meta_description')
-                //->stacked()
                 ->rules(['max:'.config('cms.seo.meta_description_limit')])
                 ->help('Max '.config('cms.seo.meta_description_limit').' characters.')
                 ->hideFromIndex(),

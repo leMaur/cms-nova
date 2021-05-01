@@ -1,18 +1,13 @@
 <?php
 
-declare(strict_types=1);
-
 namespace App\Nova;
 
 use App\Models\SocialNavigation as Model;
 use App\Nova\Concerns\LinkField;
 use Ebess\AdvancedNovaMediaLibrary\Fields\Images;
-use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
-use Illuminate\Support\Str;
 use Laravel\Nova\Fields\Stack;
 use Laravel\Nova\Fields\Text;
-use Laravel\Nova\Http\Requests\NovaRequest;
 use OptimistDigital\NovaSortable\Traits\HasSortableRows;
 
 class SocialNavigation extends Resource
@@ -41,27 +36,19 @@ class SocialNavigation extends Resource
 
             Text::make('Url')->rules(['required', 'url']),
 
-            Images::make('Icon', 'socialnavigation.image.single'),
+            Images::make('Icon', 'socialnavigation.image'),
         ];
     }
 
     public function fieldsForIndex(): array
     {
         return [
-            Images::make('Icon', 'socialnavigation.image.single'),
+            Images::make('Icon', 'socialnavigation.image'),
 
             Stack::make('Name', [
                 Text::make('Name'),
                 LinkField::make($this, 'Url', sprintf('https://%s.%s', $this->slug, config('app.domain'))),
             ]),
         ];
-    }
-
-    public static function indexQuery(NovaRequest $request, $query): Builder
-    {
-        return $query
-            ->whereType(Model::SOCIAL)
-            ->reorder()
-            ->ordered();
     }
 }

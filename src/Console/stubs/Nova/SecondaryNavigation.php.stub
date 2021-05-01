@@ -1,15 +1,11 @@
 <?php
 
-declare(strict_types=1);
-
 namespace App\Nova;
 
 use App\Models\SecondaryNavigation as Model;
 use Ebess\AdvancedNovaMediaLibrary\Fields\Images;
-use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsTo;
-use Laravel\Nova\Http\Requests\NovaRequest;
 use OptimistDigital\NovaSortable\Traits\HasSortableRows;
 
 class SecondaryNavigation extends Resource
@@ -36,25 +32,17 @@ class SecondaryNavigation extends Resource
         return [
             BelongsTo::make('Page'),
 
-            Images::make('Icon', 'secondarynavigation.image.single'),
+            Images::make('Icon', 'secondarynavigation.image'),
         ];
     }
 
     public function fieldsForIndex(): array
     {
         return [
-            Images::make('Icon', 'secondarynavigation.image.single'),
+            Images::make('Icon', 'secondarynavigation.image'),
 
             BelongsTo::make('Page')
                 ->default(fn () => $this->name),
         ];
-    }
-
-    public static function indexQuery(NovaRequest $request, $query): Builder
-    {
-        return $query
-            ->whereType(Model::SECONDARY)
-            ->reorder()
-            ->ordered();
     }
 }
