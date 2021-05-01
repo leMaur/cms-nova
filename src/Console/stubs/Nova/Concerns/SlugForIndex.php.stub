@@ -11,7 +11,7 @@ class SlugForIndex
     public static function make(Resource $resource, string $name): Text
     {
         $url = (string) config('app.url');
-        $parent = trim($resource->parent, '/');
+        $parent = $resource->parent ? trim($resource->parent, '/') : null;
         $slug = trim(ReservedSlug::toSlug($resource->slug), '/');
         $href = collect([$url, $parent, $slug])->filter()->implode('/');
         $url = collect([$url, $parent])->filter()->implode('/');
