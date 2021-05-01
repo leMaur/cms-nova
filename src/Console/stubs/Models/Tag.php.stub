@@ -1,12 +1,13 @@
 <?php
 
-declare(strict_types=1);
-
 namespace App\Models;
 
 use Lemaur\Cms\Models\Tag as CmsTag;
+use Lemaur\Cms\Traits\HasGlobalScopeType;
 
 class Tag extends CmsTag
 {
+    use HasGlobalScopeType;
+
     public const TYPE = 'tag';
 }

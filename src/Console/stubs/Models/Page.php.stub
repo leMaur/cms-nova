@@ -1,24 +1,13 @@
 <?php
 
-declare(strict_types=1);
-
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Builder;
 use Lemaur\Cms\Models\Page as CmsPage;
+use Lemaur\Cms\Traits\HasGlobalScopeType;
 
 class Page extends CmsPage
 {
-    protected static function booted(): void
-    {
-        parent::booted();
+    use HasGlobalScopeType;
 
-        static::addGlobalScope('page', function (Builder $builder): void {
-            $builder->withType('page');
-        });
-
-        static::saving(function ($model) {
-            $model->type = 'page';
-        });
-    }
+    public const TYPE = 'page';
 }
