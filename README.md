@@ -1,9 +1,27 @@
 # Laravel Cms for Nova
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/lemaur/laravel-cms-nova.svg?style=flat-square)](https://packagist.org/packages/lemaur/laravel-cms-nova)
-[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/lemaur/laravel-cms-nova/run-tests?label=tests)](https://github.com/lemaur/laravel-cms-nova/actions?query=workflow%3Arun-tests+branch%3Amaster)
-[![GitHub Code Style Action Status](https://img.shields.io/github/workflow/status/lemaur/laravel-cms-nova/Check%20&%20fix%20styling?label=code%20style)](https://github.com/lemaur/laravel-cms-nova/actions?query=workflow%3A"Check+%26+fix+styling"+branch%3Amaster)
-[![Total Downloads](https://img.shields.io/packagist/dt/lemaur/laravel-cms-nova.svg?style=flat-square)](https://packagist.org/packages/lemaur/laravel-cms-nova)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/lemaur/cms-nova.svg?style=flat-square)](https://packagist.org/packages/lemaur/cms-nova)
+[![Total Downloads](https://img.shields.io/packagist/dt/lemaur/cms-nova.svg?style=flat-square)](https://packagist.org/packages/lemaur/cms-nova)
+[![License](https://img.shields.io/packagist/l/lemaur/cms-nova.svg?style=flat-square&color=yellow)](https://github.com/leMaur/cms/blob/master/LICENSE.md)
+[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/lemaur/cms-nova/run-tests?label=tests&style=flat-square)](https://github.com/lemaur/cms-nova/actions?query=workflow%3Arun-tests+branch%3Amaster)
+[![GitHub Code Style Action Status](https://img.shields.io/github/workflow/status/lemaur/cms-nova/Check%20&%20fix%20styling?label=code%20style&style=flat-square)](https://github.com/lemaur/cms-nova/actions?query=workflow%3A"Check+%26+fix+styling"+branch%3Amaster)
+[![GitHub Sponsors](https://img.shields.io/github/sponsors/lemaur?style=flat-square&color=ea4aaa)](https://github.com/sponsors/leMaur)
+[![Trees](https://img.shields.io/badge/dynamic/json?color=yellowgreen&style=flat-square&label=Trees&query=%24.total&url=https%3A%2F%2Fpublic.offset.earth%2Fusers%2Flemaur%2Ftrees)](https://ecologi.com/lemaur?r=6012e849de97da001ddfd6c9)
+
+## Support Me
+
+Hey folks,
+
+Do you like this package? Do you find it useful and it fits well in your project?
+
+I am glad to help you, and I would be so grateful if you considered supporting my work.
+
+You can even choose 😃:
+* You can [sponsor me 😎](https://github.com/sponsors/leMaur) with a monthly subscription.
+* You can [buy me a coffee ☕ or a pizza 🍕](https://github.com/sponsors/leMaur?frequency=one-time&sponsor=leMaur) just for this package.
+* You can [plant trees 🌴](https://ecologi.com/lemaur?r=6012e849de97da001ddfd6c9). By using this link we will both receive 30 trees for free and the planet (and me) will thank you. 
+* You can "Star ⭐" this repository (it's free 😉).
+
 
 ## Installation
 
