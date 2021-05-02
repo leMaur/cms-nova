@@ -1,4 +1,4 @@
-# Laravel Cms for Nova
+# Nova backend scaffold for Lemaur/Cms
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/lemaur/cms-nova.svg?style=flat-square)](https://packagist.org/packages/lemaur/cms-nova)
 [![Total Downloads](https://img.shields.io/packagist/dt/lemaur/cms-nova.svg?style=flat-square)](https://packagist.org/packages/lemaur/cms-nova)
