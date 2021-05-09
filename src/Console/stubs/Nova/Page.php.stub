@@ -32,16 +32,19 @@ class Page extends Resource
     {
         return [
             Text::make('Title')
-                ->rules(['max:'.config('cms.seo.title.limit')])
+                ->rules(['required', 'max:'.config('cms.seo.title.limit')])
                 ->help('Max '.config('cms.seo.title.limit').' characters.'),
 
             Select::make('Parent')
-                ->options(Model::getAvailableParents())
-                ->displayUsingLabels(),
+                ->options(
+                    collect(Model::getAvailableParents())
+                        ->mapWithKeys(fn ($item) => [$item => ucfirst($item)])
+                        ->prepend(null, null)
+                        ->toArray()
+                ),
 
-            Select::make('Layout')
-                ->options(Model::getAvailableLayouts())
-                ->displayUsingLabels(),
+            Text::make('Layout')
+                ->suggestions(Model::getAvailableLayouts()),
 
             Text::make('Slug')
                 ->rules(['max:255'])
