@@ -22,7 +22,7 @@
         "laravel/nova": "~3.0",
         "optimistdigital/nova-sortable": "^2.2",
         "spatie/laravel-package-tools": "^1.4.3",
-        "lemaur/nova-tags-field": "dev-fix/remove-escaping-tags as 3.1"
+        "spatie/nova-tags-field": "dev-fix/remove-escaping-tags as 3.99.99"
     },
     "require-dev": {
         "nunomaduro/collision": "^5.3",
