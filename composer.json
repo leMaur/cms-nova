@@ -39,16 +39,16 @@
             "Tests\\": "tests"
         }
     },
-    "repositories": [
-        {
+    "repositories": {
+        "nova": {
             "type": "composer",
             "url": "https://nova.laravel.com"
         },
-        {
+        "nova-tags-field": {
             "type": "vcs",
             "url": "https://github.com/lemaur/nova-tags-field"
         }
-    ],
+    },
     "scripts": {
         "psalm": "vendor/bin/psalm",
         "test": "./vendor/bin/testbench package:test --parallel --no-coverage",
