@@ -22,7 +22,7 @@
         "laravel/nova": "~3.0",
         "optimistdigital/nova-sortable": "^2.2",
         "spatie/laravel-package-tools": "^1.4.3",
-        "spatie/nova-tags-field": "^3.1"
+        "lemaur/nova-tags-field": "dev-fix/remove-escaping-tags as 3.1"
     },
     "require-dev": {
         "nunomaduro/collision": "^5.3",
@@ -43,6 +43,10 @@
         {
             "type": "composer",
             "url": "https://nova.laravel.com"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/lemaur/nova-tags-field"
         }
     ],
     "scripts": {
